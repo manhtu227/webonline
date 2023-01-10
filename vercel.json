@@ -2,8 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/app.js", 
-      "use": "vercel-sapper"
+      "src": "./app.js",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
