@@ -1,0 +1,46 @@
+{{#section "css"}}
+  <link rel="stylesheet" href="/css/courses.css" />
+{{/section}}
+
+{{#section "js"}}
+  <script src="/js/search.js"></script>
+{{/section}}
+
+<div class="courses__header">
+  <h1 class="courses__title">
+    <i class="fa fa-info-circle" aria-hidden="true"></i>
+    {{this.totalResult}} results for "{{this.keyWord}}"
+  </h1>
+</div>
+
+<div class="courses__tool">
+  {{> courses_sort_pc}}
+</div>
+
+<div class="courses__body">
+  {{> courses_sort_mobile}}
+
+  {{#each this.courses}}
+    {{> course_horizontal}}
+
+    {{> course_mobile}}
+  {{/each}}
+
+  <div class="courses__footer">
+      {{#if this.pageInfo.numbers}}
+        <div class="courses__pagination">
+          <a href="/courses/search?searchBy={{@root.searchOption}}&keyword={{@root.keyWord}}&sortBy={{@root.sortOption}}&page={{minus this.pageInfo.current 1}}" 
+            {{#if this.pageInfo.isFirst}}class="link--disabled"{{/if}}>&laquo;</a>
+          
+          {{#each this.pageInfo.numbers}}
+            <a href="/courses/search?searchBy={{@root.searchOption}}&keyword={{@root.keyWord}}&sortBy={{@root.sortOption}}&page={{value}}" 
+              {{#if isActive}}class="active"{{/if}}>{{value}}</a>
+          {{/each}}
+
+          <a href="/courses/search?searchBy={{@root.searchOption}}&keyword={{@root.keyWord}}&sortBy={{@root.sortOption}}&page={{add this.pageInfo.current 1}}" 
+            {{#if this.pageInfo.isLast}}class="link--disabled"{{/if}}>&raquo;</a>
+      </div>
+      {{/if}}
+  </div>
+</div>  
+

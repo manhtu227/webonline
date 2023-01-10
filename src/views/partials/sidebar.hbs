@@ -1,0 +1,233 @@
+{{#if check}}
+<nav class="sidebar1">
+   
+  <input type="checkbox" name="" class="nav__input" id="side-nav__input" />
+
+  <label for="side-nav__input" class="side-nav__bars">
+    <i class="fas fa-bars side-nav__bars--icon"></i>
+  </label>
+  <a href="/" class="sidebar1__logo">
+    <span class="text-primary__sun">SUN</span>
+    <span class="text-primary__light">LIGHT</span>
+  </a>
+
+  <ul class="side-nav d-flex align-items-start flex-column">
+
+    <li class="side-nav__item side-nav__item--active">
+      <a href="/" class="side-nav__link">
+        <i class="fas fa-home side-nav__icon"></i>
+        <span>Home</span>
+      </a>
+    </li>
+    {{#if lcAuthTeacher.id}}
+    <li class="side-nav__item">
+      <a href="/courses" class="side-nav__link">
+        <i class="fas fa-th-list side-nav__icon"></i>
+        <span>Category</span>
+      </a>
+    </li>
+    <li class="side-nav__item">
+      <a href="/teacher/profile" class="side-nav__link">
+        <i class="fas fa-address-card side-nav__icon"></i>
+        <span>profile</span>
+      </a>
+    </li>
+    {{else}}
+    {{#if lcAuthAdmin.id}}
+      <li class="side-nav__item">
+        <a href="/courses" class="side-nav__link">
+          <i class="fas fa-th-list side-nav__icon"></i>
+          <span>Category</span>
+        </a>
+      </li>
+      <li class="side-nav__item">
+        <a href="/admin/listAccount" class="side-nav__link">
+          <i class="fas fa-address-card side-nav__icon"></i>
+          <span>Accounts</span>
+        </a>
+      </li>
+      <li class="side-nav__item">
+        <a href="/admin/categories" class="side-nav__link">
+          <i class="fas fa-address-card side-nav__icon"></i>
+          <span>Categories</span>
+        </a>
+      </li>
+      <li class="side-nav__item">
+        <a href="/admin/courses" class="side-nav__link">
+          <i class="fas fa-address-card side-nav__icon"></i>
+          <span>Courses</span>
+        </a>
+      </li>
+    {{else}}
+    <li class="side-nav__item">
+      <a href="/courses" class="side-nav__link">
+        <i class="fas fa-th-list side-nav__icon"></i>
+        <span>Category</span>
+      </a>
+    </li>
+    <li class="side-nav__item">
+      <a href="/courses/learning" class="side-nav__link">
+        <i class="fas fa-book side-nav__icon"></i>
+        <span>Learning</span>
+      </a>
+    </li>
+    <li class="side-nav__item">
+      <a href="/courses/watch-list" class="side-nav__link">
+        <i class="fas fa-heart side-nav__icon"></i>
+        <span>Watch List</span>
+      </a>
+    </li>
+    <li class="side-nav__item">
+      <a href="/profile" class="side-nav__link">
+        <i class="fas fa-address-card side-nav__icon"></i>
+        <span>profile</span>
+      </a>
+    </li>
+    {{/if}}
+    {{/if}}
+    {{#if lcIsAuthenticated}}
+    <li class="side-nav__item p-2 ">
+      <a href="/account/logout" class="side-nav__link">
+       <i class="fas fa-sign-out-alt side-nav__icon"></i>
+        <span>Log out</span>
+      </a>
+    </li>
+    {{else}}
+    <li class="side-nav__item p-2 log">
+      <a href="/account/login" class="side-nav__link">
+       <i class="fas fa-sign-out-alt side-nav__icon"></i>
+        <span>Log in</span>
+      </a>
+    </li>
+    <li class="side-nav__item p-2 log">
+      <a href="/account/signup" class="side-nav__link">
+       <i class="fas fa-sign-out-alt side-nav__icon"></i>
+        <span>Sign up</span>
+      </a>
+    </li>
+    {{/if}}
+  </ul>
+  <button class="sidebar1__search">
+    <i class="fas fa-search sidebar1__icon"></i>
+  </button>
+  <label for="side-nav__input" class="side-nav__overlay"></label>
+</nav>
+
+{{else}}
+{{! SIDEBAR--icon }}
+<nav class="sidebar1 sidebar--icon">
+  <input type="checkbox" name="" class="nav__input" id="side-nav__input" />
+
+  <label for="side-nav__input" class="side-nav__bars">
+    <i class="fas fa-bars side-nav__bars--icon"></i>
+  </label>
+  <a href="/" class="sidebar1__logo">
+    <span class="text-primary__sun">SUN</span>
+    <span class="text-primary__light">LIGHT</span>
+  </a>
+
+  <ul class="side-nav">
+
+    <li class="side-nav__item">
+      <a href="/" class="side-nav__link">
+        <i class="fas fa-home side-nav__icon" data-toggle="tooltip" data-html="true" data-placement="right"
+          title="<h5>Home</h5>"></i>
+        <span class="hidden">Home</span>
+      </a>
+    </li>
+    <li class="side-nav__item {{#if isCourse}}side-nav__item--active{{/if}}">
+      <a href="/courses" class="side-nav__link ">
+        <i class="fas fa-th-list side-nav__icon" data-toggle="tooltip" data-html="true" data-placement="right"
+          title="<h5>Category</h5>"></i>
+        <span class="hidden">Category</span>
+      </a>
+    </li>
+    {{#if lcAuthAdmin.id}}
+   
+    <li class="side-nav__item {{#if isAccount}}side-nav__item--active{{/if}}">
+        <a href="/admin/listAccount" class="side-nav__link">
+        <i class="fas fa-user-circle side-nav__icon" data-toggle="tooltip" data-html="true" data-placement="right"
+            title="<h5>accounts</h5>"></i>
+          <span class="hidden">profile</span>
+        </a>
+      </li>
+      <li class="side-nav__item {{#if isCategories}}side-nav__item--active{{/if}}">
+        <a href="/admin/categories" class="side-nav__link">
+          <i class="fas fa-address-card side-nav__icon" data-toggle="tooltip" data-html="true" data-placement="right"
+            title="<h5>categories</h5>"></i>
+          <span class="hidden">profile</span>
+        </a>
+      </li>
+       <li class="side-nav__item {{#if isCourses}}side-nav__item--active{{/if}}">
+        <a href="/admin/courses" class="side-nav__link">
+          <i class="fas fa-book-open side-nav__icon" data-toggle="tooltip" data-html="true" data-placement="right"
+            title="<h5>courses</h5>"></i>
+          <span class="hidden">Courses</span>
+        </a>
+      </li>
+    {{else}}
+      {{#if lcAuthTeacher.id}}
+       <li class="side-nav__item {{#if isProfile}}side-nav__item--active{{/if}}">
+      <a href="/teacher/profile" class="side-nav__link">
+        <i class="fas fa-address-card side-nav__icon" data-toggle="tooltip" data-html="true" data-placement="right"
+          title="<h5>Profile</h5>"></i>
+        <span class="hidden">profile</span>
+      </a>
+    </li>
+      {{else}}
+      <li class="side-nav__item {{#if isLearning}}side-nav__item--active{{/if}}">
+        <a href="/courses/learning" class="side-nav__link">
+          <i class="fas fa-book side-nav__icon" data-toggle="tooltip" data-html="true" data-placement="right"
+            title="<h5>Learning</h5>"></i>
+          <span class="hidden">Learning</span>
+        </a>
+      </li>
+      <li class="side-nav__item {{#if isWatchList}}side-nav__item--active{{/if}}" >
+        <a href="/courses/watch-list" class="side-nav__link">
+          <i class="fas fa-heart side-nav__icon" data-toggle="tooltip" data-html="true" data-placement="right"
+            title="<h5>Watch List</h5>"></i>
+          <span class="hidden">Watch List</span>
+        </a>
+      </li>
+      <li class="side-nav__item {{#if isProfile}}side-nav__item--active{{/if}}">
+        <a href="/profile" class="side-nav__link">
+          <i class="fas fa-address-card side-nav__icon" data-toggle="tooltip" data-html="true" data-placement="right"
+            title="<h5>Profile</h5>"></i>
+          <span class="hidden">profile</span>
+        </a>
+      </li>
+      {{/if}}
+    {{/if}}
+    
+   
+    {{#if lcIsAuthenticated}}
+    <li class="side-nav__item ">
+      <a href="/account/logout" class="side-nav__link">
+      <i class="fas fa-sign-out-alt side-nav__icon" data-toggle="tooltip" data-html="true" data-placement="right"
+          title="<h5>Log Out</h5>"></i>
+        <span class="hidden">Log Out</span>
+      </a>
+    </li>
+    {{else}}
+      <li class="side-nav__item log">
+        <a href="/account/login" class="side-nav__link">
+        <i class="fas fa-sign-in-alt side-nav__icon" data-toggle="tooltip" data-html="true" data-placement="right"
+            title="<h5>Log in</h5>"></i>
+          <span class="hidden">Log in</span>
+        </a>
+      </li>
+      <li class="side-nav__item log">
+        <a href="/account/signup" class="side-nav__link">
+        <i class="fas fa-user-plus side-nav__icon" data-toggle="tooltip" data-html="true" data-placement="right"
+            title="<h5>Sign up</h5>"></i>
+          <span class="hidden">Sign up</span>
+        </a>
+      </li>
+    {{/if}}
+  </ul>
+  <button class="sidebar1__search">
+    <i class="fas fa-search sidebar1__icon"></i>
+  </button>
+  <label for="side-nav__input" class="side-nav__overlay"></label>
+</nav>
+{{/if}}

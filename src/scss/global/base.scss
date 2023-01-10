@@ -1,0 +1,222 @@
+@import "variable";
+
+.nav__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: $text-color;
+  background-color: $white-color;
+  border: 1px solid $white-color;
+  border-radius: 2px;
+
+  &:hover {
+    color: $text-color;
+    border-color: $black-color;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  &.btn--active {
+    color: $text-color;
+    border-color: $primary-color;
+    background-color: $primary-color;
+  }
+
+  &.btn--border {
+    border-color: $black-color;
+
+    &:hover {
+      color: $text-color;
+      border-color: $black-color;
+      background-color: $hover-color;
+    }
+  }
+  &.btn--icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.btn--primary {
+    border-color: $primary-color;
+    background-color: $primary-color;
+
+    &:hover {
+      color: $text-color;
+      background-color: $hover-second-color;
+    }
+
+    &.btn--border {
+      border-color: $black-color;
+    }
+  }
+
+  &.btn--submit {
+    background-color: black;
+    color: #fff;
+    border-radius: 0.5rem;
+
+    &:hover,
+    &:active {
+      background-color: black;
+      color: $gold-color;
+      transform: scaleY(1.1);
+      cursor: pointer;
+    }
+  }
+
+  &.btn--danger {
+    color: $white-color;
+    border-color: $danger-color;
+    background-color: $danger-color;
+
+    &:hover {
+      filter: brightness(95%);
+    }
+
+    &.btn--border {
+      border-color: $black-color;
+    }
+  }
+
+  &.btn--heart {
+    i {
+      font-size: 3rem;
+      color: $gray-color;
+    }
+    border-color: $black-color;
+    background-color: $white-color;
+
+    &:hover {
+      filter: brightness(95%);
+    }
+
+    &.active i {
+      color: $danger-color;
+    }
+  }
+
+  &.btn--info {
+    color: $white-color;
+    border-color: $info-color;
+    background-color: $info-color;
+
+    &:hover {
+      filter: brightness(95%);
+    }
+
+    &.btn--border {
+      border-color: $black-color;
+    }
+  }
+
+  &.btn--success {
+    color: $white-color;
+    border-color: $success-color;
+    background-color: $success-color;
+
+    &:hover {
+      filter: brightness(95%);
+    }
+
+    &.btn--border {
+      border-color: $black-color;
+    }
+  }
+
+  &.btn--disabled {
+    opacity: 0.8;
+    filter: brightness(80%);
+    border: none;
+
+    &:hover {
+      opacity: 0.8;
+      filter: brightness(80%);
+    }
+  }
+}
+
+.table {
+  border-spacing: 1px;
+
+  thead th {
+    text-align: center;
+  }
+
+  tbody td,
+  thead th {
+    vertical-align: middle;
+  }
+
+  .col-btn {
+    .btn {
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      margin: auto;
+    }
+    width: 60px;
+    padding: 10px;
+  }
+}
+
+.fa-star {
+  color: #feda56;
+}
+.stars {
+  position: relative;
+  white-space: nowrap;
+  .overlay--star {
+    background: #fff;
+    height: 100%;
+    overflow: hidden;
+    mix-blend-mode: color;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  font-size: 1.2rem;
+}
+
+a {
+  color: $text-color;
+  &:hover {
+    text-decoration: none;
+    filter: brightness(90%);
+  }
+
+  &.link--gold {
+    color: $gold-color;
+  }
+
+  &.link--info {
+    color: $info-color;
+  }
+
+  &.link--danger {
+    color: $danger-color;
+  }
+
+  &.link--success {
+    color: $success-color;
+  }
+
+  &.link--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

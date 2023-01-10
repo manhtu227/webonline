@@ -1,0 +1,161 @@
+body {
+  background: linear-gradient(191deg, rgba(255, 192, 67, 0) 5.02%, rgba(255, 192, 67, 0.5) 94.1%);
+  background-size: cover;
+  background-size: 100% 100%; }
+
+.border {
+  border: 1px solid red !important; }
+
+.input {
+  border: 1px solid black; }
+
+.card {
+  border-radius: 0.8rem;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.75); }
+  .card-body {
+    font-size: 1.5rem; }
+    @media only screen and (max-width: 31.25em) {
+      .card-body .usernameCard1 {
+        margin-bottom: 0 !important;
+        font-size: 3rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .card-body .positionCard1 {
+        font-size: 1.8rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .card-body .titleCard2 {
+        font-size: 1.6rem; } }
+    @media only screen and (max-width: 31.25em) {
+      .card-body .inputName, .card-body .inputEmail, .card-body .inputPass, .card-body .inputNewPass {
+        font-size: 1.5rem; } }
+
+.flex-card {
+  display: flex;
+  justify-content: space-between; }
+
+img {
+  border: 2px solid linear-gradient(324deg, #f8d752 0%, #22c1c3 50% !important); }
+
+.Edit {
+  margin-left: 2rem; }
+  .Edit:hover, .Edit:active {
+    margin-top: 0.5rem;
+    cursor: pointer; }
+  @media only screen and (max-width: 31.25em) {
+    .Edit {
+      margin-left: 0;
+      float: right;
+      position: relative;
+      top: -2.4rem;
+      margin-bottom: 0; } }
+  @media only screen and (max-width: 31.25em) {
+    .Edit-currpass {
+      margin-left: 0;
+      float: right;
+      position: relative;
+      top: -4rem;
+      margin-bottom: 0; } }
+
+#edit {
+  bottom: 0 !important; }
+
+.titleTransition {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; }
+  .titleTransitionLove::before {
+    position: absolute;
+    content: attr(data-content);
+    /* Prints the value of the attribute */
+    color: #f84c5e;
+    text-decoration: underline;
+    overflow: hidden;
+    transition: width 275ms ease;
+    width: 0;
+    white-space: nowrap; }
+  .titleTransition::before {
+    position: absolute;
+    content: attr(data-content);
+    /* Prints the value of the attribute */
+    color: #6e4616;
+    text-decoration: underline;
+    overflow: hidden;
+    transition: width 275ms ease;
+    width: 0;
+    white-space: nowrap; }
+  .titleTransitionLove:hover::before {
+    width: 100%; }
+  .titleTransition:hover::before {
+    width: 100%; }
+
+.slider {
+  -webkit-scroll-snap-points-x: repeat(300px);
+  -ms-scroll-snap-points-x: repeat(300px);
+  scroll-snap-points-x: repeat(300px);
+  -webkit-scroll-snap-type: mandatory;
+  -ms-scroll-snap-type: mandatory;
+  scroll-snap-type: mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  width: 37rem;
+  height: 53.6rem; }
+
+.slides > div:target {
+  transform: scale(0.8); }
+
+.carousel-item__img img {
+  width: 13rem;
+  height: 9rem;
+  margin-right: 0.8rem; }
+
+.carousel-item__detail--name {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 2.6rem;
+  height: 5.2rem;
+  font-size: 1.7rem;
+  font-weight: 700; }
+
+.carousel-item__detail--teacher {
+  font-size: 1.2rem; }
+
+input {
+  border: none; }
+
+.btnEdit {
+  padding: 0.5rem 5rem;
+  margin-top: 1rem; }
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+.inputfile + label {
+  margin-top: 14rem !important;
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: #1a46b5;
+  display: inline-block;
+  padding: 0.5rem; }
+
+.inputfile + label {
+  cursor: pointer;
+  /* "hand" cursor */ }
+
+.inputfile + label:hover {
+  background-color: red; }
+
+.inputfile:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px; }
+
+.inputfile + label * {
+  pointer-events: none; }

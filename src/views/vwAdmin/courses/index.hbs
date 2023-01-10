@@ -1,0 +1,152 @@
+{{#section "css"}}
+    <link rel="stylesheet" href="/css/courses.css" />
+{{/section}}
+
+{{#section "js"}}
+  <script src="/js/admin/course.js"></script>
+{{/section}}
+
+<form class="container" method="post" action="/admin/courses/deleteByCheckbox">
+  <div class="admin__header">
+    <div></div>
+    <h1 class="admin__title">Courses</h1>
+    <div></div>
+  </div>
+
+<div class="courses__tool">
+  <button
+      type="submit"
+      class="admin__btn btn btn--icon btn--danger btn--disabled multiDeleteCourse"
+      disabled
+    >
+      <i class="fa fa-trash" aria-hidden="true"></i>
+  </button>
+
+  <div class="courses__sort">
+    <label for="filterByCategory" class="mr-3">
+      <h1>Category:</h1> 
+    </label>
+    <select name="filterByCategory" id="filterByCategory" class="form-input">
+      <option value="0">All</option>
+      {{#each this.categories}}
+        <option value="{{id}}" {{#ifEquals @root.categoryID id}}selected{{/ifEquals}}>{{name}}</option>
+      {{/each}}
+    </select>
+
+    <label for="filterByTeacher" class="ml-5 mr-3">
+      <h1>Teacher:</h1> 
+    </label>
+    <select name="filterByTeacher" id="filterByTeacher" class="form-input">
+      <option value="0">All</option>
+      
+      {{#each this.teachers}}
+        <option value="{{id}}" {{#ifEquals @root.teacherID id}}selected{{/ifEquals}}>{{name}}</option>
+      {{/each}}
+    </select>
+
+     <div
+      id="filterBtnSubmit"
+      class="admin__btn btn btn--icon btn--info ml-5">
+      Filter
+      <i class="fa fa-filter" aria-hidden="true"></i>
+    </div>
+  </div> 
+</div>
+
+  <table class="table table-bordered table--courses">
+    <thead class="thead-light">
+      <tr>
+        <th>
+          <input type="checkbox" id="checkboxAllCourse" />
+        </th>
+        <th>#</th>
+        <th>Course Name</th>
+        <th>Options</th>
+        <th>Blocked</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each this.courses}}
+        <tr>
+          <td>
+            <input
+              type="checkbox"
+              name="idCourses"
+              class="checkboxCourse"
+              value={{id}}
+            />
+          </td>
+          <td scope="row">{{id}}</td>
+          <td>{{name}}</td>
+          <td class="col-btn">
+            <a
+              href="#"
+              class="d-flex link--danger"
+              id="delete"
+              data-id={{id}}
+              data-toggle="modal"
+              data-target="#deleteCourseModal"
+            >
+              <i class="fa fa-trash mr-2" aria-hidden="true"></i>
+              delete
+            </a>
+          </td>
+          <td>
+            <input
+                    type="checkbox" 
+                    name="isBlocked" {{#if blocked}}checked{{/if}} 
+                    value={{id}} />
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</form>
+
+{{! Form delete }}
+<form name="deleteCourseForm" method="post"></form>
+<form name="blockedCourseForm" method="post"></form>
+
+{{! filter link }}
+<a id="filterCourseLink" href=""></a>
+
+{{! Confirm delete course }}
+<div
+  class="modal fade"
+  id="deleteCourseModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="deleteCourseModal"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="deleteCourseModal">Confirm delete</h3>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mt-3 mb-3">
+        <h1>Are you sure to delete this course?</h1>
+      </div>
+      <div class="modal-footer">
+        <button
+          id="deleteCourseBtn"
+          type="button"
+          class="btn btn--danger"
+        >Delete</button>
+        <button
+          type="button"
+          class="btn btn--border"
+          data-dismiss="modal"
+        >Close</button>
+      </div>
+    </div>
+  </div>
+</div>

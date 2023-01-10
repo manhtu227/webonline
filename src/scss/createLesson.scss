@@ -1,0 +1,193 @@
+body {
+  background: rgba(255, 192, 67, 0.5);
+}
+
+label {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.formCourse {
+  //background-color: rgb(160, 170, 197);
+  border: 0.2rem dashed #d8d7dc;
+  width: 100%;
+  border-radius: 1rem;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  // padding: 2rem;
+}
+
+.formCourse_title {
+  border: 1px solid #d1d7dc;
+  &:hover {
+    cursor: pointer;
+    background-color: #d8d7dc;
+    border-radius: 1rem;
+  }
+
+  padding-top: 1rem;
+  font-size: 1.6rem;
+
+  p {
+    i {
+      font-size: 1.4rem;
+      margin: 0 1rem;
+    }
+  }
+
+  // border-bottom: 1px solid #000;
+}
+
+.fa-angle-down {
+  padding: 0 1rem;
+}
+
+.icon-lesson {
+  // margin-right: 6rem;
+}
+
+.chapter__add {
+  font-size: 3rem;
+  margin-left: 1rem;
+  font-family: SuisseWorks, Georgia, Times, times new roman, serif,
+    apple color emoji, segoe ui emoji, segoe ui symbol;
+  font-weight: bold;
+
+  p {
+    // margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    // justify-self: center;
+    align-self: flex-end;
+    font-style: italic;
+  }
+}
+
+.btnAddLesson {
+  p {
+    align-self: center;
+  }
+}
+
+.up-icon {
+  transform: rotate(-180deg);
+  transition: transform 150ms linear;
+}
+
+.down-icon {
+  transform: rotate(0deg);
+  transition: transform 150ms linear;
+}
+
+.delete {
+  color: red;
+}
+
+.edit {
+  color: #6bb41b;
+}
+
+.chapter__title {
+  padding-top: 1rem;
+  border: 1px solid #d1d7dc;
+}
+.edit {
+  color: rgb(0, 51, 255);
+}
+.edit:hover {
+  cursor: pointer;
+  color: #6bb41b !important;
+}
+
+.deleteLesson:hover,
+.deleteChapter:hover {
+  cursor: pointer;
+  color: rgba(255, 0, 0, 0.301) !important;
+}
+.chapter__title:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.chapter__content {
+  // padding-left: 1rem;
+  // border: 0.1rem solid #d1d1d5;
+  font-size: 1.5rem;
+
+  p {
+    font-size: 1.4rem;
+
+    i {
+      font-size: 1.4rem;
+      padding: 0 2rem;
+    }
+  }
+}
+
+.btnAddChapter,
+.btnComplete {
+  background-color: #00d8b2;
+  border-color: transparent;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  // margin-left: 2rem;
+  margin-right: 1rem;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+  }
+}
+
+.addLessonBtn {
+  background-color: #6bb41b;
+  border-color: transparent;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  // margin-left: 2rem;
+  margin-right: 1rem;
+  // margin-top: 1rem;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+  }
+}
+
+.subLabel {
+  font-size: 1.5rem;
+  color: red;
+  margin-top: 1rem;
+  font-weight: bold;
+
+  &-price {
+    font-size: 1.1rem;
+    margin-top: 1.3rem;
+  }
+}
+
+.Chapter,
+.Lesson {
+  top: auto;
+  left: auto;
+  width: 50rem;
+  padding: 3rem;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  // position: fixed !important;
+  z-index: 10;
+
+  .form-control {
+    font-size: 1.5rem;
+  }
+}
+
+.background-color {
+  background-color: #d8d7dc;
+}
+.background-color1 {
+  background-color: #f7f9fa;
+}

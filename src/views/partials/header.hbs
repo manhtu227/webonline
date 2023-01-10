@@ -1,0 +1,67 @@
+{{#section "js"}}
+  <script src="/js/layout/search.js"></script>
+{{/section}}
+
+<style> 
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap'); 
+</style>
+
+<a href="/" class="logo">
+  <img
+    src="https://previews.123rf.com/images/captainvector/captainvector1703/captainvector170309493/74165387-academy-logo-element.jpg"
+    alt="trillo logo"
+    class="logo--img"
+  />
+  <span class="text-primary__sun">SUN</span>
+  <span class="text-primary__light">LIGHT</span>
+</a>
+
+<form id="searchForm" action="/courses/search" class="search">
+  {{! <div class="search__option"> }}
+  {{! <div class="btn search__option-btn">
+      <span class="search__option-current">Search by Name</span>
+      <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </div> }}
+
+  <select name="searchBy" class="search__option">
+    {{#each this.searchOptions}}
+      <option class="search__option-item" value="{{value}}" {{#if isSelected}}selected{{/if}}>{{name}}</option>
+    {{/each}}
+    {{! <option class="search__option-item" value="1">Search by Category</option> }}
+  </select>
+  {{! </div> }}
+
+  {{! <input type="hidden" class="search__input" name="searchBy" value="0" /> }}
+
+  <input
+    type="text"
+    class="search__input"
+    placeholder="Search course"
+    name="keyword"
+  />
+
+  <button type="submit" class="search__button">
+    <i class="fas fa-search search__icon"></i>
+  </button>
+</form>
+
+<nav class="user-nav">
+  {{#if lcIsAuthenticated}}
+  <div class="user-nav__user">
+    <img src="{{lcAuthUser.img}}{{lcAuthTeacher.img}}{{lcAuthAdmin.img}}" alt="User photo" class="user-nav__user-photo" />
+    <span class="user-nav__user-name">Hi, {{lcAuthUser.name}}{{lcAuthTeacher.name}} {{#if lcAuthAdmin}}Admin{{/if}}</span>
+  </div>  
+  
+  {{else}}
+    <div class="user-nav__acc">
+      <a class="btn btn--border user-nav__link" href="/account/login" role="button">
+        <i class="fas fa-sign-in-alt mr-3"></i>
+        Login</a>
+    </div>
+    <div class="user-nav__acc">
+      <a class="btn btn--primary user-nav__link" href="/account/signup" role="button">
+        <i class="fas fa-user-plus mr-3"></i>
+        Sign up</a>
+    </div>
+  {{/if}}
+</nav>

@@ -1,0 +1,693 @@
+@import "./global/variable";
+
+.display_flex {
+  display: flex;
+}
+
+.courseD__intro {
+  width: 92vw;
+  height: 45rem;
+  padding-left: 50px;
+  padding-top: 5px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)),
+    url(/images/background/tech.jpg);
+  position: relative;
+
+  .path {
+    margin-right: 2rem;
+  }
+
+  .courseD__intro__info {
+    margin-left: 5rem;
+    padding-top: 2rem;
+  }
+
+  .courseD_intro__videoPreview {
+    position: absolute;
+    background-color: #fff;
+    padding: 9px;
+    border-radius: 4px;
+    right: 4%;
+    top: -1%;
+    transform: translateY(50%);
+    width: 455px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    .coursePreview_title {
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .coursePreview_benefit {
+      margin-top: 4rem;
+      .title {
+        font-weight: bold;
+        text-align: left;
+        margin-bottom: 1rem;
+      }
+      .content {
+        margin-top: 0.3rem;
+        font-size: 1.5rem;
+        margin-left: 0rem;
+        .perLine {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+
+  .course__category {
+    font-size: 1.5rem;
+    padding-top: 4px;
+  }
+
+  .courseD__intro__avt {
+    height: 310px;
+    width: 300px;
+    margin: 31px 0px 0px 0px;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .courseD__intro__name {
+    width: 70rem;
+    font-size: 4rem;
+    font-weight: bold;
+  }
+
+  .courseD__intro__status {
+    margin-left: 2rem;
+    border-radius: 2px;
+    height: 5rem;
+    width: 20rem;
+    font-size: 2rem;
+    padding-top: 1rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .courseD__intro__item {
+    width: 80rem;
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .course__teacher {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .courseDetail_course__review {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1rem 0;
+    margin-top: 1.5rem;
+    .courseDetail_course__review-ratings {
+      color: $gold-color;
+      .star {
+        color: $primary-color;
+      }
+    }
+    .courseDetail_course__review-number {
+      color: black;
+      margin-right: 2rem;
+    }
+  }
+
+  .courseD__intro__category {
+    color: #917b00;
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+    &:hover {
+      color: blue;
+    }
+  }
+
+  .courseD__intro__link {
+    color: #917b00;
+    margin-right: 1rem;
+    margin-left: 1rem;
+
+    &:hover {
+      color: blue;
+    }
+  }
+
+  .courseD__intro__footer {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    position: relative;
+  }
+
+  .courseD__intro__buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    height: 5rem;
+
+    .btn {
+      height: 100%;
+      border-color: black;
+    }
+    .btn2 {
+      height: 100%;
+      border-color: white;
+      color: red;
+    }
+
+    .buying-btn-frame {
+      width: 28rem;
+      height: 7rem;
+      margin-right: 2rem;
+      display: flex;
+      align-items: center;
+
+      .buying-button {
+        height: 5rem;
+        width: 25rem;
+        background-color: #f8d752;
+        border-color: #f8d752;
+        font-size: 2rem;
+        font-weight: bolder;
+        color: black;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 2px 2px #888888;
+
+        &:hover {
+          transform: translateX(-3px) translateY(-3px);
+          height: 7rem;
+          width: 28rem;
+          font-size: 4rem;
+          cursor: pointer;
+        }
+        .fee {
+          font-size: 2rem;
+          margin-bottom: 0px;
+          margin-right: 1.2rem;
+        }
+        .feeO {
+          font-size: 1.4rem;
+          text-decoration: line-through;
+          margin-bottom: 0px;
+        }
+      }
+    }
+
+    .learning-btn-frame {
+      width: 28rem;
+      height: 7rem;
+      margin-right: 2rem;
+      display: flex;
+      align-items: center;
+
+      .learning-button {
+        height: 5rem;
+        width: 25rem;
+        background-color: white;
+        border-color: #f8d752;
+        font-size: 2rem;
+        font-weight: bolder;
+        color: black;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 2px 2px #888888;
+
+        &:hover {
+          transform: translateX(-3px) translateY(-3px);
+          height: 7rem;
+          width: 28rem;
+          font-size: 4rem;
+          cursor: pointer;
+        }
+        .learning {
+          font-size: 2rem;
+          margin-bottom: 0px;
+          margin-right: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.courseD__content {
+  display: flex;
+  position: relative;
+
+  .left {
+    width: 65%;
+    margin-left: 3rem;
+
+    .description {
+      margin-top: 5rem;
+      font-size: 1.5rem;
+      .icon {
+        margin-right: 1rem;
+      }
+    }
+
+    .description-title {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .description-item {
+      font-size: 1.6rem;
+      justify-content: flex-start;
+    }
+
+    .table {
+      border: 0.2rem solid black;
+      td,
+      th {
+        border: none;
+        vertical-align: top;
+      }
+    }
+
+    .course_content_table {
+      background-color: rgb(26, 24, 24);
+    }
+
+    .chapter {
+      padding-top: 1rem;
+      display: flex;
+      border-bottom: 1px solid gray;
+    }
+
+    .chapter-name {
+      color: white;
+      width: 50rem;
+      font-size: 1.6rem;
+    }
+
+    .chapter-name:hover {
+      color: aquamarine;
+    }
+
+    .chapter-information {
+      color: #b1b1ba;
+      font-size: 1.4rem;
+    }
+  }
+
+  .right {
+    margin: 40rem 0rem 0rem 10rem;
+    font-size: 2.5rem;
+    .similar_course-button {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4rem;
+      margin-left: 5rem;
+      margin-top: 2rem;
+      border-color: white;
+      background-color: white;
+      border-bottom: 1px solid black;
+      width: 90%;
+      height: 8rem;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 15px;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+        background-color: lightgray;
+      }
+
+      .similar_course_name {
+        font-size: 1.5rem;
+        font-weight: 300;
+        padding-left: 1rem;
+        color: black;
+        line-height: 2.2rem;
+        max-height: 4.4rem;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+      }
+
+      .similar_course_teacher {
+        padding-left: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .similar_course-image {
+        height: 8rem;
+        width: 11rem;
+      }
+
+      .similar_course-price {
+        font-size: 1.8rem;
+        color: red;
+        padding-left: 4rem;
+        margin-left: auto;
+        margin-right: 5px;
+      }
+      .col-sm-3,
+      .col-sm-7,
+      .col-sm-2 {
+        padding: 0px;
+        .col-sm-7 {
+          padding-right: 3rem;
+        }
+      }
+    }
+  }
+}
+
+.teacher {
+  margin-left: 10rem;
+  margin-top: 10rem;
+  height: 30rem;
+  .teacher_title {
+    font-style: italic;
+    font-weight: bolder;
+    margin-left: 3rem;
+    font-size: 3rem;
+  }
+  .teacher_review {
+    display: flex;
+    // margin-top: 2rem;
+    // height: 29rem;
+    width: 85%;
+    color: black;
+    &:hover {
+      text-decoration: none;
+    }
+    .teacher_avt {
+      margin-top: 3rem;
+      height: 20rem;
+      // clip-path: circle(80px at 50% 30%);
+    }
+    p {
+      font-size: 1.4rem;
+    }
+  }
+  .teacher_information {
+    margin-top: 2.5rem;
+    margin-left: 6rem;
+    text-align: left;
+
+    .teacher_role {
+      font-size: 1.8rem;
+    }
+
+    .teacher_contact {
+      font-size: 1.6rem;
+      text-decoration: underline;
+    }
+
+    .teacher_name {
+      font-size: 2.7rem;
+      font-weight: bold;
+      text-decoration: underline;
+      color: blue;
+      &:hover {
+        color: darkblue;
+      }
+    }
+
+    .teacher_specialization {
+      color: #906d47;
+      font-size: 1.5rem;
+    }
+    .teacher_learner-courses {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.feedback-title {
+  margin-top: 5rem;
+  // margin-left: 5rem;
+  font-size: 2.6rem;
+  font-weight: bold;
+}
+.feedback {
+  margin-top: 15rem;
+  display: flex;
+  background-color: #f5f7fa;
+  .col-md-8 {
+    margin-bottom: 3rem;
+  }
+}
+
+.feedback_review {
+  display: flex;
+  padding-top: 3rem;
+  // margin-left: 5rem;
+  .feedback_review-numberRate {
+    font-size: 5.2rem;
+    font-weight: bold;
+    margin-right: 1.2rem;
+  }
+  .feedback_review-ratings {
+    margin-top: 1.9rem;
+    color: #e59819;
+    font-size: 1.2rem;
+  }
+  .feedback_review-ratings_links {
+    font-size: 1.6rem;
+    color: black;
+    &:hover {
+      color: burlywood;
+    }
+  }
+}
+
+.feedback-left {
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+}
+.feedback-right {
+  font-size: 1.5rem;
+  margin-top: 5rem;
+  margin-left: 15rem;
+  .feedback-right-star {
+    color: #e59819;
+  }
+}
+
+#see_more_feedbacks-btn {
+  margin-top: 2rem;
+  margin-left: 15rem;
+  color: blue;
+  border-color: blue;
+}
+
+.reviews-bar-graph {
+  ul {
+    padding: 0px;
+  }
+  .reviews-bar-graph-per_line {
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    .numberStar {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    .line {
+      position: relative;
+      height: 0.7rem;
+    }
+    .straightLine {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #eaeaea;
+    }
+    .lineStar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: #e59819;
+      // }
+    }
+  }
+}
+
+.formCourse {
+  //background-color: rgb(160, 170, 197);
+  border: 0.2rem ridge #d8d7dc;
+  width: 100%;
+  border-radius: 1rem;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  // padding: 2rem;
+}
+
+.formCourse_title {
+  font-weight: bold;
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  font-size: 1.8rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #d8d7dc;
+    border-radius: 1rem;
+  }
+
+  p {
+    i {
+      font-size: 1.4rem;
+      margin: 0 1rem;
+    }
+  }
+
+  // border-bottom: 1px solid #000;
+}
+
+.fa-angle-down {
+  padding: 0 1rem;
+}
+
+.chapter__add {
+  font-size: 3rem;
+  margin-left: 1rem;
+  font-family: SuisseWorks, Georgia, Times, times new roman, serif,
+    apple color emoji, segoe ui emoji, segoe ui symbol;
+  font-weight: bold;
+
+  p {
+    // margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+    // justify-self: center;
+    align-self: center;
+    font-style: italic;
+  }
+}
+
+.btnAddLesson {
+  p {
+    align-self: center;
+  }
+}
+
+.up-icon {
+  transform: rotate(-180deg);
+  transition: transform 150ms linear;
+}
+
+.down-icon {
+  transform: rotate(0deg);
+  transition: transform 150ms linear;
+}
+
+.delete {
+  color: red;
+}
+
+.edit {
+  color: #6bb41b;
+}
+
+.chapter__title {
+  padding-top: 1rem;
+  font-weight: 700;
+}
+
+.chapter__title:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.chapter__content {
+  // padding-left: 1rem;
+  // border: 0.1rem solid #d1d1d5;
+  font-size: 1.2rem;
+  margin-left: 0.9rem;
+
+  p {
+    font-size: 1.6rem;
+    margin-left: 0.7rem;
+
+    i {
+      font-size: 1.4rem;
+      padding: 0 2rem;
+    }
+  }
+}
+
+.btnAddChapter {
+  background-color: #00d8b2;
+  border-color: transparent;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  // margin-left: 2rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+  }
+}
+
+.addLessonBtn {
+  background-color: #6bb41b;
+  border-color: transparent;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-size: 1.7rem;
+  // margin-left: 2rem;
+  margin-right: 1rem;
+  // margin-top: 1rem;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+  }
+}
+
+.subLabel {
+  font-size: 1.5rem;
+  color: red;
+  margin-top: 1rem;
+  font-weight: bold;
+
+  &-price {
+    font-size: 1.1rem;
+    margin-top: 1.3rem;
+  }
+}
+
+.Chapter,
+.Lesson {
+  top: auto;
+  left: auto;
+  width: 50rem;
+  padding: 3rem;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  // position: fixed !important;
+  z-index: 10;
+
+  .form-control {
+    font-size: 1.5rem;
+  }
+}
+
+.background-color {
+  background-color: #d8d7dc;
+}

@@ -1,0 +1,286 @@
+// .profile-cover {
+//   position: relative;
+//   z-index: 0;
+// }
+
+// .panel {
+//   margin-bottom: 30px;
+//   color: #696969;
+//   background-color: #fff;
+//   border-radius: 5px;
+//   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+// }
+@import "./global/variable";
+
+.profile-cover__action {
+  display: flex;
+  padding: 18.8rem 3rem 1rem 15.3rem;
+  border-radius: 5px 5px 0 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: url(https://bootdey.com/img/Content/bg1.jpg) no-repeat;
+  background-size: cover;
+
+  .btn {
+    padding: 0.8rem;
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+.btn {
+  &:hover {
+    background-color: $primary-color;
+  }
+}
+
+.profile-cover__img {
+  position: absolute;
+  top: 120px;
+  left: 25px;
+  text-align: center;
+  z-index: 1;
+  transition: 2s;
+
+  &--baner {
+    position: absolute;
+    width: 12rem;
+    height: 13rem;
+    top: 5rem;
+    // background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    max-width: 120px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+  }
+
+  .h3 {
+    top: 20rem;
+    color: #393939;
+    position: absolute;
+    font-size: 20px;
+    line-height: 24px;
+    width: 46rem;
+    text-align: left;
+  }
+}
+
+.img {
+  margin-left: 1rem;
+}
+
+.profile-cover__info {
+  .nav {
+    margin-right: 2.8rem;
+    padding: 1.5rem 0 1rem 17rem;
+    color: #999;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: flex-end;
+
+    li {
+      margin-top: 13px;
+      margin-bottom: 13px;
+
+      &:not(:first-child) {
+        margin-left: 30px;
+        padding-left: 30px;
+        border-left: 1px solid #eee;
+      }
+    }
+
+    strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #e16123;
+      font-size: 34px;
+    }
+  }
+}
+
+.text-black {
+  .card {
+    background: #222;
+    // border: 1px solid #dd2476;
+    box-shadow: #222 1px 0 10px;
+
+    color: rgba(250, 250, 250, 0.8);
+    margin-bottom: 2rem;
+    position: relative;
+
+    // &:hover {
+    //   cursor: pointer;
+    //   transform: translateY(-2px);
+    // }
+  }
+
+  .course__teacher {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $white-color;
+    margin: 0;
+    // margin-top: -1.5rem;
+  }
+}
+
+.course__review {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  color: $gold-color;
+
+  .course__review-number {
+    font-weight: 400;
+    margin-left: 1.4rem;
+    color: $white-color;
+  }
+}
+
+.course__price {
+  display: flex;
+  align-items: center;
+
+  .course__price-unit {
+    font-size: 1.6rem;
+    text-decoration: underline;
+  }
+
+  .course__price-new {
+    display: flex;
+    align-items: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: red;
+  }
+
+  .course__price-old {
+    display: flex;
+    align-items: center;
+    text-decoration: line-through;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-left: 1.4rem;
+    color: $white-color;
+  }
+}
+
+.overlay {
+  top: 0;
+}
+
+.btn-default,
+.btn-primary {
+  color: $black-color !important;
+  border: solid 1px $black-color;
+}
+
+.card {
+  position: relative;
+}
+
+.fa-times {
+  img {
+    background-color: #ccc;
+    border-radius: 100px;
+  }
+
+  position: absolute;
+  color: $black-color;
+  right: 2;
+  font-size: 2rem;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(2px);
+  }
+}
+
+.col-sm-7 > input {
+  border: 1px solid #000;
+}
+
+.input {
+  border: none;
+
+  position: relative;
+
+  .fa-exclamation-circle {
+    top: 0.5rem;
+    position: absolute;
+    right: 2rem;
+  }
+}
+@media (min-width: 576px) {
+  #modal_profile .modal-dialog {
+    max-width: 125rem;
+    margin: 1.75rem auto;
+  }
+}
+.hidden {
+  display: none;
+}
+
+// .modal-content {
+//   width: 80% !important;
+//   margin-left: 2rem;
+// }
+
+// input file
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  margin-top: 13rem;
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: rgb(26, 70, 181);
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+.inputfile + label {
+  cursor: pointer;
+  /* "hand" cursor */
+}
+
+.inputfile + label:hover {
+  background-color: red;
+}
+
+.inputfile:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+  pointer-events: none;
+}
+
+//
+.rounded-circle {
+  position: absolute;
+
+  width: 12rem;
+  height: 13rem;
+  right: 20rem;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}

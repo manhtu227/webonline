@@ -1,0 +1,59 @@
+{{#section "css"}}
+  <link rel="stylesheet" href="/css/profile.css" />
+  <link rel="stylesheet" href="/css/courses.css" />
+  <link rel="stylesheet" href="/css/learningCourses.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+{{/section}}
+{{#section "images"}}
+  <link rel="stylesheet" href="/images/background/bg1.png" />
+{{/section}}
+{{#section "js"}}
+  <script src="/js/profile.js"></script>
+{{/section}}
+<section>
+  <div class="container-fluid py-4 m-0">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card mb-4 mb-md-0">
+          <div class="card-body box-slider">
+            <div class="flex-card d-flex">
+              <p
+                data-content="LEARNING"
+                class="mb-4 me-1 titleTransition"
+                style="font-weight: bold;font-size:2.6rem"
+              >LEARNING
+                <i class="fas fa-book" style="color: #6e4616;"></i></p>
+                 <p style="font-weight: bold;font-size:2.6rem; margin-left: auto">{{totalCourses}} courses
+                </p>
+            </div>
+
+             <div class="courses__body">
+              {{#each this.courses}}
+                {{> course_horizontal_withoutPrice}}
+
+                {{> course_mobile_withoutPrice}}           
+              {{/each}}
+
+              <div class="courses__footer">
+                {{#if this.pageInfo.numbers}}
+                  <div class="courses__pagination">
+                    <a href="/courses/learning?&page={{minus this.pageInfo.current 1}}" 
+                      {{#if this.pageInfo.isFirst}}class="link--disabled"{{/if}}>&laquo;</a>
+                    
+                    {{#each this.pageInfo.numbers}}
+                      <a href="/courses/learning?&page={{value}}" 
+                        {{#if isActive}}class="active"{{/if}}>{{value}}</a>
+                    {{/each}}
+
+                    <a href="/courses/learning?&page={{add this.pageInfo.current 1}}" 
+                      {{#if this.pageInfo.isLast}}class="link--disabled"{{/if}}>&raquo;</a>
+                  </div>
+                {{/if}}
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

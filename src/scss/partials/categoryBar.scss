@@ -1,0 +1,127 @@
+@import "../global/variable";
+
+// .category__bar {
+//   position: relative;
+//   display: block;
+// }
+
+.category__heading {
+  margin: 0;
+  padding: 0 0 16px 20px;
+  font-size: 3rem;
+  font-weight: 500;
+  color: $text-color;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+
+  .category__heading-icon {
+    font-size: 1.4rem;
+    margin-right: 8px;
+    transform: translateY(2px);
+  }
+}
+
+.category-list {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.category-item {
+  padding: 8px 0 8px 8px;
+
+  &.category-item--active > .category-item__link {
+    color: $link-color;
+  }
+
+  &.category-item--active > .category-item__link:hover {
+    transform: none;
+    text-decoration: none;
+    cursor: default;
+  }
+
+  &.category-item--active > .category-item__link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    border: 4px solid transparent;
+    border-left-color: $link-color;
+    transform: translateY(calc(-50% + 1px));
+  }
+}
+
+.category-item--l1 + .category-item--l1 {
+  border-top: 1px solid $border-color;
+}
+
+.category-item--l2 + .category-item--l2 {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.category-item__link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: $text-color;
+  transition: transform ease-in 0.1s;
+  will-change: transform;
+
+  &.category-item__link--l1 {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  &:hover {
+    transform: translateX(2px);
+    color: $link-color;
+  }
+}
+
+.category__bar--mobile__btn {
+  display: none;
+  padding: 0 12px;
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: $text-color;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+.category__nav-input:checked ~ .category__bar {
+  right: 0;
+}
+
+.category__nav-input:checked ~ .nav__overlay {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+  z-index: 9;
+}
+
+body:has(.category__nav-input:checked) {
+  position: fixed;
+}
+
+@media screen and (max-width: 1200px) {
+  .category__bar {
+    position: fixed;
+    top: calc(#{$header-height} - 1px);
+    right: -100%;
+    height: 100%;
+    padding-top: 15px;
+    background-color: $white-color;
+    width: 50%;
+    z-index: 10;
+    transition: right 0.5s ease-in;
+    overflow-y: scroll;
+  }
+
+  .category__bar--mobile__btn {
+    display: block;
+  }
+}
